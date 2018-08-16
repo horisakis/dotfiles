@@ -1,0 +1,14 @@
+.atom/*
+.config/*
+
+# whitelist
+!.atom/config.cson
+!.atom/init.coffee
+!.atom/keymap.cson
+!.atom/snippets.cson
+!.atom/styles.less
+!.config/git
+!.config/yarn
+.config/yarn/link
+.config/yarn/global/node_modules
+

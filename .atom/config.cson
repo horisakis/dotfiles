@@ -1,0 +1,31 @@
+"*":
+  "atom-beautify":
+    java: {}
+  "autocomplete-paths":
+    maxFileCount: 20000
+  "autocomplete-ruby":
+    rsensePath: "/Users/user/.rbenv/shims/rsense"
+  core:
+    disabledPackages: [
+      "autocomplete-paths"
+    ]
+    packagesWithKeymapsDisabled: [
+      "intentions"
+    ]
+    telemetryConsent: "no"
+  "exception-reporting":
+    userId: "34efced2-ecb2-4c4c-954f-87d80cafd46f"
+  "platformio-ide-terminal":
+    ansiColors:
+      normal:
+        blue: "#0359e3"
+      zBright: {}
+    customTexts: {}
+    iconColors: {}
+    style:
+      defaultPanelHeight: "200px"
+      fontSize: "16"
+      theme: "pro"
+  "tree-view": {}
+  welcome:
+    showOnStartup: false
