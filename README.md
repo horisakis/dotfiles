@@ -23,6 +23,11 @@ $ ~/dotfiles/setup.sh initialize
 $ ~/dotfiles/setup.sh deploy
 ```
 
+## HELP
+* When an installation error occurs with the message "The install failed (エラーによってインストールできませんでした。ソフトウェアの製造元に問い合わせてください。)"
+  - システム環境設定 > セキュリティとプライバシー > 一般 > App Storeと確認済みの開発元からのアプリケーションを許可 > 許可
+
+
 ## TODO
 * SSH-KEY settings
 
