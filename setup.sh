@@ -94,10 +94,10 @@ initialize() {
 
   if [ ! -d ${HOME}/.anyenv ]; then
     git clone https://github.com/riywo/anyenv ~/.anyenv
-    anyenv install goenv
+#    anyenv install goenv
     anyenv install rbenv
-    anyenv install pyenv
-    anyenv install phpenv
+#    anyenv install pyenv
+#    anyenv install phpenv
     anyenv install ndenv
     exec $SHELL -l
   fi
