@@ -76,12 +76,14 @@ initialize() {
     darwin*)
       run_brew
 
+      set +e
       if [ ! -e ~/Library/Fonts/Cica-Regular.ttf ]; then
         wget https://github.com/miiton/Cica/releases/download/v3.0.0/Cica_v3.0.0.zip
         unar Cica_v2.1.0.zip
         cp -f Cica_v2.1.0/Cica*.ttf ${HOME}/Library/Fonts/
         rm -rf Cica_v2.1.0*
       fi
+      set -e
       ;;
     linux-gnu)
       run_apt
@@ -92,6 +94,7 @@ initialize() {
       ;;
   esac
 
+  set +e
   if [ ! -d ${HOME}/.anyenv ]; then
     git clone https://github.com/riywo/anyenv ~/.anyenv
 #    anyenv install goenv
@@ -106,7 +109,6 @@ initialize() {
     apm install --packages-file atom/packages.list
   fi
 
-  set +e
   if has "pyenv"; then
     [ ! -d $(pyenv root)/plugins/pyenv-virtualenv ] && git clone https://github.com/yyuu/pyenv-virtualenv $(pyenv root)/plugins/pyenv-virtualenv
   fi
@@ -114,6 +116,7 @@ initialize() {
     [ ! -d $(rbenv root)/plugins/rbenv-default-gems ] && git clone -q https://github.com/rbenv/rbenv-default-gems.git $(rbenv root)/plugins/rbenv-default-gems
     [ ! -e $(rbenv root)/default-gems ] && cp ${DOT_DIRECTORY}/default-gems $(rbenv root)/default-gems
   fi
+  set -e
 
   echo "$(tput setaf 2)Initialize complete!. ✔︎$(tput sgr0)"
 }
