@@ -24,4 +24,16 @@ $ ~/dotfiles/setup.sh deploy
 ```
 
 ## TODO
+* SSH-KEY settings
+
+```
+ssh-keygen -t rsa -C "email"
+```
+```
+cat ~/.ssh/id_rsa.pub 
+```
+```
+open https://github.com/settings/keys
+```
+
 * OS X settings
