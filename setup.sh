@@ -78,10 +78,11 @@ initialize() {
 
       set +e
       if [ ! -e ~/Library/Fonts/Cica-Regular.ttf ]; then
-        wget https://github.com/miiton/Cica/releases/download/v3.0.0/Cica_v3.0.0.zip
-        unar Cica_v2.1.0.zip
-        cp -f Cica_v2.1.0/Cica*.ttf ${HOME}/Library/Fonts/
-        rm -rf Cica_v2.1.0*
+        CICA_VIRSION="v4.1.1"
+        wget https://github.com/miiton/Cica/releases/download/${CICA_VIRSION}/Cica-${CICA_VIRSION}.zip
+        unar Cica-${CICA_VIRSION}.zip
+        cp -f Cica-${CICA_VIRSION}/Cica*.ttf ${HOME}/Library/Fonts/
+        rm -rf Cica-${CICA_VIRSION}*
       fi
       set -e
       ;;
