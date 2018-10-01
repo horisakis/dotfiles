@@ -73,7 +73,7 @@ run_brew() {
       'firefox'
       'franz'
       'google-chrome'
-      'google-drive'
+      'google-backup-and-sync'
       'slack'
       'skitch'
       'skype'
