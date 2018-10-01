@@ -13,8 +13,8 @@ run_brew() {
     [[ $? ]] && echo "$(tput setaf 2)Update Homebrew complete. ✔︎$(tput sgr0)"
 
     brew tap 'caskroom/cask'
-    brew tap 'homebrew/apache'
-    brew tap 'homebrew/php'
+#    brew tap 'homebrew/apache'
+#    brew tap 'homebrew/php'
     brew tap 'sanemat/font'
 
     local list_formulae
