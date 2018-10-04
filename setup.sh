@@ -68,7 +68,10 @@ link_files() {
     fi
   done
 
-  ln -sfv ${DOT_DIRECTORY}/ssh_config ${HOME}/.ssh/config
+  [ -n "${OVERWRITE}" -a -e ${HOME}/.ssh/config ] && rm -f ${HOME}/.ssh/config
+  if [ ! -e ${HOME}/.ssh/config ]; then
+    ln -sfv ${DOT_DIRECTORY}/ssh_config ${HOME}/.ssh/config
+  fi
 
   echo $(tput setaf 2)Deploy dotfiles complete!. ✔︎$(tput sgr0)
 }
