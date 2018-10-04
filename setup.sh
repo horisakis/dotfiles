@@ -68,6 +68,8 @@ link_files() {
     fi
   done
 
+  ln -sfv ${DOT_DIRECTORY}/ssh_config ${HOME}/.ssh/config
+
   echo $(tput setaf 2)Deploy dotfiles complete!. ✔︎$(tput sgr0)
 }
 
