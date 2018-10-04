@@ -26,7 +26,6 @@ run_brew() {
       'mysql'
       'openssl'
       'postgresql'
-      'rbenv'
       'ruby-build'
       'unar'
       'wget'
