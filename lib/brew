@@ -23,6 +23,7 @@ run_brew() {
       'fish'
       'fontforge'
       'git'
+      'jq'
       'mysql'
       'openssl'
       'postgresql'
