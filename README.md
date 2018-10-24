@@ -43,10 +43,10 @@ open https://github.com/settings/keys
 
 * OS X settings
   - Install Xcode
-```
-xcode-select --install
-```
+   ```
+   xcode-select --install
+   ```
   - Install Homebrew
-```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+   ```
+   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   ```
