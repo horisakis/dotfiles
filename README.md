@@ -44,5 +44,5 @@ open https://github.com/settings/keys
 * OS X settings
   - Install Xcode
 ```
-open "https://itunes.apple.com/jp/app/xcode/id497799836?ls=1&mt=12"
+xcode-select --install
 ```
