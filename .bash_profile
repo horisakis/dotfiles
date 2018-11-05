@@ -7,5 +7,9 @@ if [ -f ~/.bashrc ] ; then
 . ~/.bashrc
 fi
 
-exec fish
+case $- in
+    *i*) exec fish;;
+      *) return;;
+esac
+
 
