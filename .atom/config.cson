@@ -4,8 +4,9 @@
   "autocomplete-paths":
     maxFileCount: 20000
   "autocomplete-ruby":
-    rsensePath: "/Users/user/.rbenv/shims/rsense"
+    rsensePath: "/Users/user/.anyenv/envs/rbenv/shims/rsense"
   core:
+    allowPendingPaneItems: false
     disabledPackages: [
       "autocomplete-paths"
     ]
@@ -13,8 +14,12 @@
       "intentions"
     ]
     telemetryConsent: "no"
+  editor: {}
   "exception-reporting":
     userId: "34efced2-ecb2-4c4c-954f-87d80cafd46f"
+  "linter-rubocop":
+    command: "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/rubocop"
+  "linter-ui-default": {}
   "platformio-ide-terminal":
     ansiColors:
       normal:
@@ -26,6 +31,11 @@
       defaultPanelHeight: "200px"
       fontSize: "16"
       theme: "pro"
+  "rubocop-auto-correct":
+    onlyFixesNotification: false
+    rubocopCommandPath: "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/rubocop"
+  "spell-check":
+    useLocales: false
   "tree-view": {}
   welcome:
     showOnStartup: false
