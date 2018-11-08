@@ -1,3 +1,9 @@
 bundler
 rubocop
 solargraph
+ruby-debug-ide
+debase
+ruby-lint
+reek
+fasterer
+debride
