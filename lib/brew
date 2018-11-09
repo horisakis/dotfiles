@@ -20,6 +20,7 @@ run_brew() {
     local list_formulae
     local -a missing_formulae
     local -a desired_formulae=(
+      'docker'
       'fish'
       'fontforge'
       'git'
@@ -71,6 +72,7 @@ run_brew() {
       'atom'
       'dash'
       'dashlane'
+      'docker'
       'dropbox'
       'firefox'
       'franz'
