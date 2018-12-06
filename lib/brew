@@ -16,6 +16,7 @@ run_brew() {
 #    brew tap 'homebrew/apache'
 #    brew tap 'homebrew/php'
     brew tap 'sanemat/font'
+    brew tap 'kyoshidajp/ghkw'
 
     local list_formulae
     local -a missing_formulae
@@ -23,6 +24,7 @@ run_brew() {
       'docker'
       'fish'
       'fontforge'
+      'ghkw'
       'git'
       'heroku'
       'jq'
