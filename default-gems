@@ -7,3 +7,4 @@ ruby-lint
 reek
 fasterer
 debride
+html2slim
