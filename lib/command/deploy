@@ -1,0 +1,25 @@
+#!/bin/bash -eu
+link_files() {
+  for f in .??*
+  do
+    echo ${f}
+    echo ${OVERWRITE}
+    echo ${DOT_DIRECTORY}
+    exit
+    # Force remove the vim directory if it's already there
+    [ -n "${OVERWRITE}" -a -e ${HOME}/${f} ] && rm -f ${HOME}/${f}
+    if [ ! -e ${HOME}/${f} ]; then
+      # If you have ignore files, add file/directory name here
+      [[ ${f} = ".git" ]] && continue
+      [[ ${f} = ".gitignore" ]] && continue
+      ln -snfv ${DOT_DIRECTORY}/${f} ${HOME}/${f}
+    fi
+  done
+
+  [ -n "${OVERWRITE}" -a -e ${HOME}/.ssh/config ] && rm -f ${HOME}/.ssh/config
+  if [ ! -e ${HOME}/.ssh/config ]; then
+    ln -sfv ${DOT_DIRECTORY}/ssh_config ${HOME}/.ssh/config
+  fi
+
+  echo $(tput setaf 2)Deploy dotfiles complete!. ✔︎$(tput sgr0)
+}

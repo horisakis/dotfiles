@@ -54,84 +54,10 @@ fi
 
 cd ${DOT_DIRECTORY}
 source ./lib/brew
-
-link_files() {
-  for f in .??*
-  do
-    # Force remove the vim directory if it's already there
-    [ -n "${OVERWRITE}" -a -e ${HOME}/${f} ] && rm -f ${HOME}/${f}
-    if [ ! -e ${HOME}/${f} ]; then
-      # If you have ignore files, add file/directory name here
-      [[ ${f} = ".git" ]] && continue
-      [[ ${f} = ".gitignore" ]] && continue
-      ln -snfv ${DOT_DIRECTORY}/${f} ${HOME}/${f}
-    fi
-  done
-
-  [ -n "${OVERWRITE}" -a -e ${HOME}/.ssh/config ] && rm -f ${HOME}/.ssh/config
-  if [ ! -e ${HOME}/.ssh/config ]; then
-    ln -sfv ${DOT_DIRECTORY}/ssh_config ${HOME}/.ssh/config
-  fi
-
-  echo $(tput setaf 2)Deploy dotfiles complete!. ✔︎$(tput sgr0)
-}
-
-initialize() {
-  case ${OSTYPE} in
-    darwin*)
-      run_brew
-
-      set +e
-      if [ ! -e ~/Library/Fonts/Cica-Regular.ttf ]; then
-        CICA_VIRSION="v4.1.1"
-        wget https://github.com/miiton/Cica/releases/download/${CICA_VIRSION}/Cica-${CICA_VIRSION}.zip
-        unar Cica-${CICA_VIRSION}.zip
-        cp -f Cica-${CICA_VIRSION}/Cica*.ttf ${HOME}/Library/Fonts/
-        rm -rf Cica-${CICA_VIRSION}*
-      fi
-      set -e
-      ;;
-    linux-gnu)
-      run_apt
-      ;;
-    *)
-      echo $(tput setaf 1)Working only OSX / Ubuntu!!$(tput sgr0)
-      exit 1
-      ;;
-  esac
-
-  set +e
-  if [ ! -d ${HOME}/.anyenv ]; then
-    git clone https://github.com/riywo/anyenv ~/.anyenv
-    git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
-
-#    anyenv install goenv
-    anyenv install rbenv
-#    anyenv install pyenv
-#    anyenv install phpenv
-    anyenv install ndenv
-
-    exec $SHELL -l
-
-    anyenv update
-  fi
-
-  if has "apm"; then
-    apm install --packages-file atom/packages.list
-  fi
-
-  if has "pyenv"; then
-    [ ! -d $(pyenv root)/plugins/pyenv-virtualenv ] && git clone https://github.com/yyuu/pyenv-virtualenv $(pyenv root)/plugins/pyenv-virtualenv
-  fi
-
-  if has "rbenv"; then
-    [ ! -d $(rbenv root)/plugins/rbenv-default-gems ] && git clone -q https://github.com/rbenv/rbenv-default-gems.git $(rbenv root)/plugins/rbenv-default-gems
-    [ ! -e $(rbenv root)/default-gems ] && cp ${DOT_DIRECTORY}/default-gems $(rbenv root)/default-gems
-  fi
-  set -e
-
-  echo "$(tput setaf 2)Initialize complete!. ✔︎$(tput sgr0)"
-}
+lib_commands=($(ls -1d ./lib/command/*))
+for cmd in "${lib_commands[@]}"; do
+  source ${cmd}
+done
 
 command=$1
 [ $# -gt 0 ] && shift
@@ -149,4 +75,3 @@ case $command in
 esac
 
 exit 0
-
