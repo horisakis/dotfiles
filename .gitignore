@@ -1,5 +1,7 @@
 .atom/*
 .config/*
+.config/yarn/link
+.config/yarn/global/node_modules
 
 # whitelist
 !.atom/config.cson
@@ -9,6 +11,3 @@
 !.atom/styles.less
 !.config/git
 !.config/yarn
-.config/yarn/link
-.config/yarn/global/node_modules
-
