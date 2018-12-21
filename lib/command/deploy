@@ -2,10 +2,6 @@
 link_files() {
   for f in .??*
   do
-    echo ${f}
-    echo ${OVERWRITE}
-    echo ${DOT_DIRECTORY}
-    exit
     # Force remove the vim directory if it's already there
     [ -n "${OVERWRITE}" -a -e ${HOME}/${f} ] && rm -f ${HOME}/${f}
     if [ ! -e ${HOME}/${f} ]; then
