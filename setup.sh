@@ -57,7 +57,6 @@ source ./lib/brew
 lib_commands=($(ls -1d ./lib/command/*))
 for cmd in "${lib_commands[@]}"; do
   source ${cmd}
-  echo ${cmd}
 done
 
 command=$1

@@ -1,17 +1,28 @@
 #!/bin/bash -eu
+check_ignore() {
+  local -a files=(
+    ".git"
+    ".gitignore"
+    ".DS_Store"
+  )
+
+  local file
+  for file in ${files[@]}; do
+    [[ $1 = ${file} ]] && return 0
+  done
+
+  return 1
+}
+
 link_files() {
   for f in .??*
   do
-    echo ${f}
-    echo ${OVERWRITE}
-    echo ${DOT_DIRECTORY}
-    exit
+    check_ignore ${f} && continue
+
     # Force remove the vim directory if it's already there
     [ -n "${OVERWRITE}" -a -e ${HOME}/${f} ] && rm -f ${HOME}/${f}
     if [ ! -e ${HOME}/${f} ]; then
       # If you have ignore files, add file/directory name here
-      [[ ${f} = ".git" ]] && continue
-      [[ ${f} = ".gitignore" ]] && continue
       ln -snfv ${DOT_DIRECTORY}/${f} ${HOME}/${f}
     fi
   done

@@ -3,3 +3,5 @@
 	email = seiji.horisaki@gmail.com
 [color "status"]
 	untracked = yellow
+[alias]
+	st = status
