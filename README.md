@@ -35,7 +35,7 @@ $ ~/dotfiles/setup.sh deploy
 ssh-keygen -t rsa -C "email"
 ```
 ```
-cat ~/.ssh/id_rsa.pub 
+cat ~/.ssh/id_rsa.pub
 ```
 ```
 open https://github.com/settings/keys
@@ -45,8 +45,4 @@ open https://github.com/settings/keys
   - Install Xcode
    ```
    xcode-select --install
-   ```
-  - Install Homebrew
-   ```
-   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
    ```
