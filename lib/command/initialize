@@ -2,6 +2,7 @@
 initialize() {
   case ${OSTYPE} in
     darwin*)
+      run_defaults
       run_brew
 
       set +e

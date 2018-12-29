@@ -54,6 +54,7 @@ fi
 
 cd ${DOT_DIRECTORY}
 source ./lib/brew
+source ./lib/defaults
 lib_commands=($(ls -1d ./lib/command/*))
 for cmd in "${lib_commands[@]}"; do
   source ${cmd}

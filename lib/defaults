@@ -1,0 +1,15 @@
+#!/bin/bash -eu
+run_defaults() {
+  # スクリーンショットの保存先を変更
+  SCREENSHOT_DIRECTORY="${HOME}/screenshots"
+  if [[ ! -d ${SCREENSHOT_DIRECTORY} ]]; then
+    mkdir "${SCREENSHOT_DIRECTORY}"
+  fi
+  defaults write com.apple.screencapture location "${SCREENSHOT_DIRECTORY}"
+
+
+  # 変更を反映
+  killall SystemUIServer
+
+  echo $(tput setaf 2)Set defaults complete!. ✔︎$(tput sgr0)
+}
