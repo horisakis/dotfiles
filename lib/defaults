@@ -11,5 +11,11 @@ run_defaults() {
   # 変更を反映
   killall SystemUIServer
 
+  ## 変更の反映には再ログインが必要
+  # キー入力速度を高速化
+  defaults write -g InitialKeyRepeat -int 10
+  defaults write -g KeyRepeat -int 1
+
+
   echo $(tput setaf 2)Set defaults complete!. ✔︎$(tput sgr0)
 }
