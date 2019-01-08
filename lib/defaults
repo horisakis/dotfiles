@@ -13,7 +13,7 @@ run_defaults() {
 
   ## 変更の反映には再ログインが必要
   # キー入力速度を高速化
-  defaults write -g InitialKeyRepeat -int 10
+  defaults write -g InitialKeyRepeat -int 11
   defaults write -g KeyRepeat -int 1
 
 
