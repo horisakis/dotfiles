@@ -8,3 +8,5 @@ reek
 fasterer
 debride
 html2slim
+#slim_lint
+github-pages
