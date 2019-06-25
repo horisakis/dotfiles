@@ -17,6 +17,9 @@
   editor: {}
   "exception-reporting":
     userId: "34efced2-ecb2-4c4c-954f-87d80cafd46f"
+  "linter-eslint":
+    global:
+      useGlobalEslint: true
   "linter-rubocop":
     command: "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/rubocop"
   "linter-ui-default": {}
@@ -39,3 +42,5 @@
   "tree-view": {}
   welcome:
     showOnStartup: false
+  "file-types":
+    gs: "source.js"

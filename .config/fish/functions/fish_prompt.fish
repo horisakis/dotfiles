@@ -25,7 +25,7 @@ function fish_prompt --description 'Write out the prompt'
     end
 
     if not set -q __fish_git_prompt_char_stagedstate
-        set -g __fish_git_prompt_char_stagedstate "●"
+        set -g __fish_git_prompt_char_stagedstate "● "
     end
     if not set -q __fish_git_prompt_char_dirtystate
         set -g __fish_git_prompt_char_dirtystate "✚ "
@@ -34,10 +34,10 @@ function fish_prompt --description 'Write out the prompt'
         set -g __fish_git_prompt_char_untrackedfiles "…"
     end
     if not set -q __fish_git_prompt_char_conflictedstate
-        set -g __fish_git_prompt_char_conflictedstate "✖"
+        set -g __fish_git_prompt_char_conflictedstate "✖ "
     end
     if not set -q __fish_git_prompt_char_cleanstate
-        set -g __fish_git_prompt_char_cleanstate "✔"
+        set -g __fish_git_prompt_char_cleanstate "✔ "
     end
 
     if not set -q __fish_git_prompt_color_dirtystate
