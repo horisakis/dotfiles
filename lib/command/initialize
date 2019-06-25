@@ -44,7 +44,6 @@ initialize() {
   fi
 
   if has "apm"; then
-    echo "aaa"
     apm install --packages-file atom/packages.list
   fi
 
