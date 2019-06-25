@@ -3,6 +3,8 @@
 .config/fish/b2f_aliases.fish
 .config/yarn/link
 .config/yarn/global/node_modules
+vscode/User/workspaceStorage
+vscode/User/globalStorage
 
 # whitelist
 !.atom/config.cson

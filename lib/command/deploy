@@ -27,5 +27,12 @@ link_files() {
     fi
   done
 
+  # vscode
+  local vscode_dir="${HOME}/Library/Application Support/Code/User"
+  [ -n "${OVERWRITE}" -a -e "${vscode_dir}" ] && rm -f "${vscode_dir}"
+  if [ ! -e "${vscode_dir}" ]; then
+    ln -snfv ${DOT_DIRECTORY}/vscode/User "${vscode_dir}"
+  fi
+
   echo $(tput setaf 2)Deploy dotfiles complete!. ✔︎$(tput sgr0)
 }

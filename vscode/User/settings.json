@@ -1,0 +1,32 @@
+{
+    "ruby.rubocop.executePath": "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/",
+    "ruby.linter.executablePath": "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/",
+    "ruby.rubocop.onSave": false,
+    "ruby.lint": {
+        // "reek": {"path": "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/"
+        // },
+        // "ruby-lint": {"path": "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/"
+        // },
+       "rubocop": {"path": "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/"
+        },
+        "ruby": false, //Runs ruby -wc
+        "fasterer": {"path": "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/"
+        },
+        "debride": {"path": "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/"
+        }
+    },
+    "debride": {
+        "rails": true //Add some rails call conversions.
+    },    
+    "ruby.interpreter.commandPath": "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/ruby",
+    "solargraph.commandPath": "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/solargraph",
+    
+    "files.associations": {
+        "*.gs": "javascript"
+    },
+    "window.zoomLevel": -1,
+    "[javascript]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "editor.snippetSuggestions": "top", // Emmet などのスニペット候補を優先して表示
+}
