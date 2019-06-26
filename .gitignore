@@ -1,5 +1,9 @@
 .atom/*
 .config/*
+.config/fish/functions/fisher.fish
+.config/fish/completions/fisher.fish
+
+.config/fish/fisher-pkg
 .config/fish/b2f_aliases.fish
 .config/yarn/link
 .config/yarn/global/node_modules

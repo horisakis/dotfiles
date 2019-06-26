@@ -25,8 +25,11 @@ initialize() {
   esac
 
   set +e
-  git clone https://github.com/d0riven/Bash2FishAliasesSync.git ~/Bash2FishAliasesSync
-  make -C ~/Bash2FishAliasesSync sync; and source ~/.config/fish/b2f_aliases.fish
+  if has "fish"; then
+    git clone https://github.com/d0riven/Bash2FishAliasesSync.git ~/Bash2FishAliasesSync
+    make -C ~/Bash2FishAliasesSync sync; and source ~/.config/fish/b2f_aliases.fish
+    ${DOT_DIRECTORY}/.config/fish/functions/install_fisher.fish
+  fi
 
   if [ ! -d ${HOME}/.anyenv ]; then
     git clone https://github.com/riywo/anyenv ~/.anyenv
