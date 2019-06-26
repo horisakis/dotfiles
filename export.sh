@@ -12,3 +12,5 @@ fi
 if has 'code'; then
   code --list-extensions > ${DOT_DIRECTORY}/vscode/packages.list
 fi
+
+cp ~/.config/fish/fisher-pkg/fishfile ${DOT_DIRECTORY}/.config/fish/fishfile
