@@ -14,8 +14,9 @@ japanese-menu@1.14.0
 javascript-snippets@1.2.1
 language-slim@1.0.0
 language-vue@0.23.1
-linter@2.2.0
+linter@2.3.0
 linter-erb@1.1.0
+linter-eslint@8.5.5
 linter-rubocop@2.2.3
 linter-ruby@1.2.6
 linter-slim@1.0.0
