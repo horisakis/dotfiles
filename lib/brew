@@ -24,6 +24,7 @@ run_brew() {
       'docker'
       'fish'
       'fontforge'
+      'fzf'
       'ghkw'
       'git'
       'heroku'
