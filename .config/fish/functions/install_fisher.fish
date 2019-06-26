@@ -9,4 +9,5 @@ if not functions -q fisher
   end
 
   fish -c fisher
+  fish -c fisher add < $XDG_CONFIG_HOME/fish/fishfile
 end
