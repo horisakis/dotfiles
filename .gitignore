@@ -2,7 +2,8 @@
 .config/*
 .config/fish/functions/fisher.fish
 .config/fish/completions/fisher.fish
-
+.config/fish/fish_variables
+.config/fish/fishd.*
 .config/fish/fisher-pkg
 .config/fish/b2f_aliases.fish
 .config/yarn/link
