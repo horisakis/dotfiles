@@ -13,6 +13,8 @@ if [ -f ~/.bashrc ] ; then
 . ~/.bashrc
 fi
 
+eval "$(hub alias -s)"
+
 case $- in
     *i*) exec fish;;
       *) return;;

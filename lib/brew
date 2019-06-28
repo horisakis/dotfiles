@@ -28,6 +28,7 @@ run_brew() {
       'ghkw'
       'git'
       'heroku'
+      'hub'
       'jq'
       'mysql'
       'openssl'
