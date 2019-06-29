@@ -26,6 +26,7 @@ run_brew() {
       'fontforge'
       'fzf'
       'ghkw'
+      'ghq'
       'git'
       'heroku'
       'hub'
