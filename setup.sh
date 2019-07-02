@@ -1,4 +1,5 @@
-#!/bin/bash -e
+#!/bin/bash
+set -e
 
 OS="$(uname -s)"
 DOT_DIRECTORY="${HOME}/dotfiles"
