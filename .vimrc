@@ -1,3 +1,7 @@
+if &shell =~# 'fish$'
+    set shell=sh
+endif
+
 " setting
 "文字コードをUFT-8に設定
 set fenc=utf-8
@@ -84,6 +88,7 @@ if dein#load_state('/Users/user/.cache/dein')
   " Add or remove your plugins here like this:
   "call dein#add('Shougo/neosnippet.vim')
   "call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('dag/vim-fish')
 
   " Required:
   call dein#end()
