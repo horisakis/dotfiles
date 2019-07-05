@@ -35,6 +35,7 @@ initialize() {
 
   if [ ! -d ${HOME}/.anyenv ]; then
     git clone https://github.com/riywo/anyenv ~/.anyenv
+    anyenv install --init
     git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
 
 #    anyenv install goenv
@@ -43,7 +44,7 @@ initialize() {
 #    anyenv install phpenv
     anyenv install ndenv
 
-    exec $SHELL -l
+    source ~/.bash_profile
 
     anyenv update
   fi
