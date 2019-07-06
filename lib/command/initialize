@@ -42,7 +42,7 @@ initialize() {
     anyenv install rbenv
 #    anyenv install pyenv
 #    anyenv install phpenv
-    anyenv install ndenv
+    anyenv install nodenv
 
     source ~/.bash_profile
 
