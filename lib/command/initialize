@@ -28,8 +28,6 @@ initialize() {
   bash <(curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh) ~/.cache/dein
 
   if has "fish"; then
-    git clone https://github.com/d0riven/Bash2FishAliasesSync.git ~/Bash2FishAliasesSync
-    make -C ~/Bash2FishAliasesSync sync; and source ~/.config/fish/b2f_aliases.fish
     ${DOT_DIRECTORY}/.config/fish/functions/install_fisher.fish
   fi
 
