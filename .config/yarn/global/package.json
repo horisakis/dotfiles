@@ -1,8 +1,10 @@
 {
   "dependencies": {
     "@google/clasp": "^2.2.0",
+    "generator-code": "^1.2.0",
     "jest": "^24.8.0",
     "lint": "^0.7.0",
-    "sao": "^1.6.1"
+    "sao": "^1.6.1",
+    "yo": "^3.1.0"
   }
 }
