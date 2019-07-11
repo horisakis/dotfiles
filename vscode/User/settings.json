@@ -29,4 +29,7 @@
         "editor.defaultFormatter": "HookyQR.beautify"
     },
     "editor.snippetSuggestions": "top", // Emmet などのスニペット候補を優先して表示
+    "editor.fontFamily": "Cica,Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 16,
+    "terminal.integrated.fontSize": 16,
 }
