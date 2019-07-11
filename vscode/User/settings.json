@@ -32,4 +32,5 @@
     "editor.fontFamily": "Cica,Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 16,
     "terminal.integrated.fontSize": 16,
+    "git.autofetch": true,
 }
