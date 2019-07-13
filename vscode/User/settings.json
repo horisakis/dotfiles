@@ -35,4 +35,5 @@
     "git.autofetch": true,
     "solargraph.diagnostics": true,
     "editor.tabSize": 2,
+    "solargraph.useBundler": true,
 }
