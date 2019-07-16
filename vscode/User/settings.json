@@ -36,4 +36,15 @@
     "solargraph.diagnostics": true,
     "editor.tabSize": 2,
     "solargraph.useBundler": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "javascript.format.enable": false,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "html.format.enable": false,
+    "prettier.eslintIntegration": true,
+    "prettier.trailingComma": "all",
+    "prettier.tslintIntegration": true,
 }

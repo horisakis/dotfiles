@@ -4,11 +4,13 @@ Angular.ng-template
 castwide.solargraph
 dbaeumer.vscode-eslint
 DigitalBrainstem.javascript-ejs-support
+esbenp.prettier-vscode
 fivethree.vscode-ionic-snippets
 HookyQR.beautify
 hoovercj.ruby-linter
 misogi.ruby-rubocop
 MS-CEINTL.vscode-language-pack-ja
+ms-vscode.vscode-typescript-tslint-plugin
 rebornix.ruby
 sianglim.slim
 TaodongWu.ejs-snippets
