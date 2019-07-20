@@ -18,8 +18,8 @@
     "debride": {
         "rails": true //Add some rails call conversions.
     },    
-    "ruby.interpreter.commandPath": "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/ruby",
-    "solargraph.commandPath": "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/solargraph",
+    "ruby.interpreter.commandPath": "/Users/user/.anyenv/envs/rbenv/versions/2.6.1/bin/ruby",
+    "solargraph.commandPath": "/Users/user/.anyenv/envs/rbenv/versions/2.6.1/bin/solargraph",
     
     "files.associations": {
         "*.gs": "javascript"
