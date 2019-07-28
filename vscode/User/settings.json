@@ -48,4 +48,5 @@
     "prettier.trailingComma": "all",
     "prettier.tslintIntegration": true,
     "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.macOptionIsMeta": true,
 }
