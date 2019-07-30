@@ -15,6 +15,9 @@ fi
 
 eval "$(hub alias -s)"
 
+# fish3対策
+export TO_FISH_PATH=$PATH
+
 case $- in
     *i*) exec fish;;
       *) return;;
