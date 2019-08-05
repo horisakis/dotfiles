@@ -49,4 +49,5 @@
     "prettier.tslintIntegration": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.macOptionIsMeta": true,
+    "python.pythonPath": "/Users/user/.anyenv/envs/pyenv/versions/anaconda3-5.3.1/bin/python",
 }
