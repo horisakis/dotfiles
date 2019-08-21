@@ -20,3 +20,4 @@ vscode/User/globalStorage
 !.config/git
 !.config/yarn
 !.config/fish/
+!.config/rubocop
