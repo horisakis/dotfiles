@@ -1,5 +1,5 @@
 {
-    "ruby.rubocop.executePath": "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/",
+    "ruby.rubocop.executePath": "/Users/user/.anyenv/envs/rbenv/versions/2.6.1/bin/",
     "ruby.linter.executablePath": "/Users/user/.anyenv/envs/rbenv/versions/2.5.1/bin/",
     "ruby.rubocop.onSave": false,
     "ruby.lint": {
@@ -52,4 +52,5 @@
     "python.pythonPath": "/Users/user/.anyenv/envs/pyenv/versions/anaconda3-5.3.1/bin/python",
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Path": "/Users/user/.anyenv/envs/pyenv/versions/anaconda3-5.3.1/bin/flake8",
+    "python.condaPath": "/Users/user/.anyenv/envs/pyenv/versions/anaconda3-5.3.1/bin/python3 ",
 }
