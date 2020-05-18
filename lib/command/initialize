@@ -16,7 +16,20 @@ initialize() {
       set -e
       ;;
     linux-gnu)
-      run_apt
+      ID_LIKE=`grep -h "ID_LIKE" /etc/os-release | awk -F= '{print $2}'`
+      case $ID_LIKE in
+        *debian*)
+          run_apt
+          ;;
+        *fedora*)
+          echo $(tput setaf 1)Working only OSX / Ubuntu!!$(tput sgr0)
+          exit 1
+          ;;
+        *)
+          echo $(tput setaf 1)Working only OSX / Ubuntu!!$(tput sgr0)
+          exit 1
+          ;;
+      esac
       ;;
     *)
       echo $(tput setaf 1)Working only OSX / Ubuntu!!$(tput sgr0)
