@@ -8,6 +8,7 @@
 .config/yarn/link
 .config/yarn/global/node_modules
 .vim/.netrwhist
+.vscode/extensions
 vscode/User/workspaceStorage
 vscode/User/globalStorage
 
