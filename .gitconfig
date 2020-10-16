@@ -1,7 +1,9 @@
-[user]
-	name = horisaki
-	email = seiji.horisaki@gmail.com
 [color "status"]
 	untracked = yellow
 [alias]
 	st = status
+	lsu = ls-files --others --exclude-standard
+	lsm = ls-files --modified
+[user]
+	name = horisakis
+	email = seiji.horisaki@gmail.com
