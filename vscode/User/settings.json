@@ -49,8 +49,8 @@
     "prettier.tslintIntegration": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.macOptionIsMeta": true,
-    "python.pythonPath": "/Users/user/.anyenv/envs/pyenv/versions/anaconda3-5.3.1/bin/python",
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Path": "/Users/user/.anyenv/envs/pyenv/versions/anaconda3-5.3.1/bin/flake8",
     "python.condaPath": "/Users/user/.anyenv/envs/pyenv/versions/anaconda3-5.3.1/bin/python3 ",
+    "python.defaultInterpreterPath": "/Users/user/.anyenv/envs/pyenv/versions/3.9.0/bin/python",
 }
