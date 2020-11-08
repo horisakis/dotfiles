@@ -53,4 +53,10 @@
     "python.linting.flake8Path": "/Users/user/.anyenv/envs/pyenv/versions/anaconda3-5.3.1/bin/flake8",
     "python.condaPath": "/Users/user/.anyenv/envs/pyenv/versions/anaconda3-5.3.1/bin/python3 ",
     "python.defaultInterpreterPath": "/Users/user/.anyenv/envs/pyenv/versions/3.9.0/bin/python",
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "shellcheck.customArgs": [
+        "-x"
+    ],
 }
