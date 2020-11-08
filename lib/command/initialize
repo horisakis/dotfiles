@@ -44,13 +44,7 @@ initialize() {
     ${DOT_DIRECTORY}/.config/fish/functions/install_fisher.fish
   fi
 
-  if  has "anyenv"; then
-    init_anyenv
-  fi
-
-  if has "apm"; then
-    apm install --packages-file atom/packages.list
-  fi
+  setup_formurae
 
   set -e
 

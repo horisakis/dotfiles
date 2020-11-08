@@ -12,7 +12,13 @@ function source_dir() {
 function setup_formurae() {
   source_dir "${DOT_DIRECTORY}"/lib/formulae
 
-  install_atom_packages
+  if has "anyenv"; then
+    init_anyenv
+  fi
+
+  if has "apm"; then
+    install_atom_packages
+  fi
 }
 
 run_brew() {
