@@ -1,0 +1,10 @@
+#!/bin/bash
+function setup_fish() {
+  if has "fish"; then
+    export TO_FISH_PATH="${PATH}"
+    cp "${HOME}/.config/fish/fish_plugins" "${DOT_DIRECTORY}/tmp/"
+    fish -c "curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher"
+    fish -c "fisher install < ${DOT_DIRECTORY}/tmp/fish_plugins"
+    rm "${DOT_DIRECTORY}/tmp/fish_plugins"
+  fi
+}
