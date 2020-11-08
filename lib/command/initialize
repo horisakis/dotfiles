@@ -1,77 +1,58 @@
 #!/bin/bash -eu
+function install_font() {
+  if [ ! -e "${FONT_DIR}/Cica-Regular.ttf" ]; then
+    local -r VIRSION="v5.0.2"
+    local -r FONTNAME="Cica_${VIRSION}_with_emoji"
+    local -r FILE_URL="https://github.com/miiton/Cica/releases/download/${VIRSION}/${FONTNAME}.zip"
+    cd "${DOT_DIRECTORY}/tmp"
+    curl -fsSLo "${FONTNAME}.zip" "${FILE_URL}"
+    unzip "${FONTNAME}.zip" -d "${FONTNAME}"
+    cp -f "${FONTNAME}/"*.ttf "${FONT_DIR}"
+    rm -rf "${FONTNAME}"*
+    cd "${DOT_DIRECTORY}"
+
+    echo "$(tput setaf 2)Install font complete!. ✔︎$(tput sgr0)"
+  fi
+}
+
 initialize() {
   case ${OSTYPE} in
-    darwin*)
-      run_defaults
-      run_brew
+  darwin*)
+    #shellcheck source=../path/mac
+    source "lib/path/mac"
+    run_defaults
+    run_brew
 
-      set +e
-      if [ ! -e ~/Library/Fonts/Cica-Regular.ttf ]; then
-        CICA_VIRSION="v4.1.1"
-        wget https://github.com/miiton/Cica/releases/download/${CICA_VIRSION}/Cica-${CICA_VIRSION}.zip
-        unar Cica-${CICA_VIRSION}.zip
-        cp -f Cica-${CICA_VIRSION}/Cica*.ttf ${HOME}/Library/Fonts/
-        rm -rf Cica-${CICA_VIRSION}*
-      fi
-      set -e
+    ;;
+  linux-gnu)
+    ID_LIKE=`grep -h "ID_LIKE" /etc/os-release | awk -F= '{print $2}'`
+    case $ID_LIKE in
+    *debian*)
+      run_apt
       ;;
-    linux-gnu)
-      ID_LIKE=`grep -h "ID_LIKE" /etc/os-release | awk -F= '{print $2}'`
-      case $ID_LIKE in
-        *debian*)
-          run_apt
-          ;;
-        *fedora*)
-          echo $(tput setaf 1)Working only OSX / Ubuntu!!$(tput sgr0)
-          exit 1
-          ;;
-        *)
-          echo $(tput setaf 1)Working only OSX / Ubuntu!!$(tput sgr0)
-          exit 1
-          ;;
-      esac
+    *fedora*)
+      echo $(tput setaf 1)Working only OSX / Ubuntu!!$(tput sgr0)
+      exit 1
       ;;
     *)
       echo $(tput setaf 1)Working only OSX / Ubuntu!!$(tput sgr0)
       exit 1
       ;;
+    esac
+    ;;
+  *)
+    echo $(tput setaf 1)Working only OSX / Ubuntu!!$(tput sgr0)
+    exit 1
+    ;;
   esac
 
   set +e
   bash <(curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh) ~/.cache/dein
 
-  if has "fish"; then
-    ${DOT_DIRECTORY}/.config/fish/functions/install_fisher.fish
-  fi
+  setup_formurae
 
-  if [ ! -d ${HOME}/.anyenv ]; then
-    git clone https://github.com/riywo/anyenv ~/.anyenv
-    anyenv install --init
-    git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
+  install_font
 
-#    anyenv install goenv
-    anyenv install rbenv
-#    anyenv install pyenv
-#    anyenv install phpenv
-    anyenv install nodenv
-
-    source ~/.bash_profile
-
-    anyenv update
-  fi
-
-  if has "apm"; then
-    apm install --packages-file atom/packages.list
-  fi
-
-  if has "pyenv"; then
-    [ ! -d $(pyenv root)/plugins/pyenv-virtualenv ] && git clone https://github.com/yyuu/pyenv-virtualenv $(pyenv root)/plugins/pyenv-virtualenv
-  fi
-
-  if has "rbenv"; then
-    [ ! -d $(rbenv root)/plugins/rbenv-default-gems ] && git clone -q https://github.com/rbenv/rbenv-default-gems.git $(rbenv root)/plugins/rbenv-default-gems
-    [ ! -e $(rbenv root)/default-gems ] && ln -snfv ${DOT_DIRECTORY}/default-gems $(rbenv root)/default-gems
-  fi
   set -e
 
   echo "$(tput setaf 2)Initialize complete!. ✔︎$(tput sgr0)"

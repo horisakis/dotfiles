@@ -1,4 +1,23 @@
 #!/bin/bash -eu
+
+function source_dir() {
+  for item in "$@"/*; do
+    if [ -f "$item" ]; then
+      # shellcheck source=/dev/null
+      source "$item"
+    fi
+  done
+}
+
+function setup_formurae() {
+  source_dir "${DOT_DIRECTORY}"/lib/formulae
+
+  setup_fish
+  init_anyenv
+  install_atom_packages
+  setup_vscode
+}
+
 run_brew() {
   if has "brew"; then
     echo "$(tput setaf 2)Already installed Homebrew ✔︎$(tput sgr0)"

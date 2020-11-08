@@ -1,0 +1,11 @@
+#!/bin/bash
+
+function install_atom_packages() {
+  if has "apm"; then
+    echo "Installing atom packages..."
+
+    apm install --packages-file "${DOT_DIRECTORY}"/atom/packages.list
+
+    echo "$(tput setaf 2)Install atom packages complete. ✔︎$(tput sgr0)"
+  fi
+}

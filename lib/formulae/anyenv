@@ -1,0 +1,39 @@
+#!/bin/bash
+
+function setup_envs() {
+  if has "rbenv"; then
+    echo "Setting up rbenv..."
+
+    [ ! -d "$(rbenv root)"/plugins/rbenv-default-gems ] && git clone -q https://github.com/rbenv/rbenv-default-gems.git "$(rbenv root)"/plugins/rbenv-default-gems
+    [ ! -e "$(rbenv root)"/default-gems ] && ln -snfv "${DOT_DIRECTORY}"/default-gems "$(rbenv root)"/default-gems
+  fi
+
+  if has "pyenv"; then
+    echo "Setting up pyenv..."
+    [ ! -d "$(pyenv root)"/plugins/pyenv-virtualenv ] && git clone https://github.com/yyuu/pyenv-virtualenv "$(pyenv root)"/plugins/pyenv-virtualenv
+  fi
+}
+
+function init_anyenv() {
+  if has "anyenv"; then
+    echo "Initializing anyenv..."
+
+    anyenv init
+    yes | anyenv install --init
+
+    git clone https://github.com/znz/anyenv-update.git "$(anyenv root)"/plugins/anyenv-update
+    anyenv update
+
+    echo "Installing  envs..."
+    anyenv install rbenv
+    anyenv install pyenv
+    anyenv install nodenv
+
+    # shellcheck source=../../../.bash_profile
+    source .bash_profile
+
+    setup_envs
+
+    echo "$(tput setaf 2)Install anyenv complete. ✔︎$(tput sgr0)"
+  fi
+}
