@@ -44,34 +44,14 @@ initialize() {
     ${DOT_DIRECTORY}/.config/fish/functions/install_fisher.fish
   fi
 
-  if [ ! -d ${HOME}/.anyenv ]; then
-    git clone https://github.com/riywo/anyenv ~/.anyenv
-    anyenv install --init
-    git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
-
-#    anyenv install goenv
-    anyenv install rbenv
-#    anyenv install pyenv
-#    anyenv install phpenv
-    anyenv install nodenv
-
-    source ~/.bash_profile
-
-    anyenv update
+  if  has "anyenv"; then
+    init_anyenv
   fi
 
   if has "apm"; then
     apm install --packages-file atom/packages.list
   fi
 
-  if has "pyenv"; then
-    [ ! -d $(pyenv root)/plugins/pyenv-virtualenv ] && git clone https://github.com/yyuu/pyenv-virtualenv $(pyenv root)/plugins/pyenv-virtualenv
-  fi
-
-  if has "rbenv"; then
-    [ ! -d $(rbenv root)/plugins/rbenv-default-gems ] && git clone -q https://github.com/rbenv/rbenv-default-gems.git $(rbenv root)/plugins/rbenv-default-gems
-    [ ! -e $(rbenv root)/default-gems ] && ln -snfv ${DOT_DIRECTORY}/default-gems $(rbenv root)/default-gems
-  fi
   set -e
 
   echo "$(tput setaf 2)Initialize complete!. ✔︎$(tput sgr0)"
