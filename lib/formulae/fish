@@ -1,0 +1,6 @@
+#!/bin/bash
+function setup_fish() {
+  if has "fish"; then
+    curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher
+  fi
+}

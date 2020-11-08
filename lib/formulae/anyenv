@@ -15,22 +15,25 @@ function setup_envs() {
 }
 
 function init_anyenv() {
-  echo "Initializing anyenv..."
+  if has "anyenv"; then
 
-  anyenv init
-  anyenv install --init
+    echo "Initializing anyenv..."
 
-  git clone https://github.com/znz/anyenv-update.git "$(anyenv root)"/plugins/anyenv-update
-  anyenv update
+    anyenv init
+    anyenv install --init
 
-  echo "Installing  envs..."
-  anyenv install rbenv
-  anyenv install pyenv
-  anyenv install nodenv
+    git clone https://github.com/znz/anyenv-update.git "$(anyenv root)"/plugins/anyenv-update
+    anyenv update
 
-  # shellcheck source="~/.bash_profile"
-  # shellcheck disable=SC1091
-  source ~/.bash_profile
+    echo "Installing  envs..."
+    anyenv install rbenv
+    anyenv install pyenv
+    anyenv install nodenv
 
-  setup_envs
+    # shellcheck source="~/.bash_profile"
+    # shellcheck disable=SC1091
+    source ~/.bash_profile
+
+    setup_envs
+  fi
 }
