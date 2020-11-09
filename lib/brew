@@ -15,6 +15,7 @@ function setup_formurae() {
   setup_fish
   init_anyenv
   install_atom_packages
+  setup_vscode
 }
 
 run_brew() {

@@ -1,46 +1,57 @@
 #!/bin/bash -eu
+function install_font() {
+  if [ ! -e "${FONT_DIR}/Cica-Regular.ttf" ]; then
+    local VIRSION="v5.0.2"
+    local FILENAME="Cica_${VIRSION}_with_emoji"
+    local FONT_URL="https://github.com/miiton/Cica/releases/download/${VIRSION}/${FILENAME}.zip"
+    cd "${DOT_DIRECTORY}/tmp"
+    curl -fsSLo font.zip "${FONT_URL}"
+    unzip font.zip -d font
+    cp -f font/*.ttf "${FONT_DIR}"
+    rm -rf font*
+    cd "${DOT_DIRECTORY}"
+  fi
+}
+
 initialize() {
   case ${OSTYPE} in
-    darwin*)
-      run_defaults
-      run_brew
+  darwin*)
+    run_defaults
+    run_brew
 
-      set +e
-      if [ ! -e ~/Library/Fonts/Cica-Regular.ttf ]; then
-        CICA_VIRSION="v4.1.1"
-        wget https://github.com/miiton/Cica/releases/download/${CICA_VIRSION}/Cica-${CICA_VIRSION}.zip
-        unar Cica-${CICA_VIRSION}.zip
-        cp -f Cica-${CICA_VIRSION}/Cica*.ttf ${HOME}/Library/Fonts/
-        rm -rf Cica-${CICA_VIRSION}*
-      fi
-      set -e
+    FONT_DIR="${HOME}/Library/Fonts/"
+    # shellcheck disable=SC2034 # Used in lib/formulae/vscode
+    VSCODE_PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+    ;;
+  linux-gnu)
+    ID_LIKE=`grep -h "ID_LIKE" /etc/os-release | awk -F= '{print $2}'`
+    case $ID_LIKE in
+    *debian*)
+      run_apt
       ;;
-    linux-gnu)
-      ID_LIKE=`grep -h "ID_LIKE" /etc/os-release | awk -F= '{print $2}'`
-      case $ID_LIKE in
-        *debian*)
-          run_apt
-          ;;
-        *fedora*)
-          echo $(tput setaf 1)Working only OSX / Ubuntu!!$(tput sgr0)
-          exit 1
-          ;;
-        *)
-          echo $(tput setaf 1)Working only OSX / Ubuntu!!$(tput sgr0)
-          exit 1
-          ;;
-      esac
+    *fedora*)
+      echo $(tput setaf 1)Working only OSX / Ubuntu!!$(tput sgr0)
+      exit 1
       ;;
     *)
       echo $(tput setaf 1)Working only OSX / Ubuntu!!$(tput sgr0)
       exit 1
       ;;
+    esac
+    ;;
+  *)
+    echo $(tput setaf 1)Working only OSX / Ubuntu!!$(tput sgr0)
+    exit 1
+    ;;
   esac
 
   set +e
   bash <(curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh) ~/.cache/dein
 
   setup_formurae
+
+  install_font
 
   set -e
 

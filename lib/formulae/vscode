@@ -1,0 +1,9 @@
+#!/bin/bash
+
+function setup_vscode() {
+  if [ -d "${VSCODE_PATH}" ]; then
+    export PATH="${PATH}:${VSCODE_PATH}"
+    code --user-data-dir "${DOT_DIRECTORY}/vscode/User"
+    code --install-extension <"${DOT_DIRECTORY}/vscode/packages.list"
+  fi
+}
