@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# shellcheck disable=SC2034 # Used in lib/initialize
+readonly FONT_DIR="${HOME}/Library/Fonts/"
+# shellcheck disable=SC2034 # Used in lib/formulae/vscode
+readonly VSCODE_PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+# shellcheck disable=SC2034 # Used in lib/formulae/vscode
+readonly VSCODE_DIR="${HOME}/Library/Application Support/Code/User"

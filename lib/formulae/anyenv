@@ -16,7 +16,6 @@ function setup_envs() {
 
 function init_anyenv() {
   if has "anyenv"; then
-
     echo "Initializing anyenv..."
 
     anyenv init
@@ -30,10 +29,10 @@ function init_anyenv() {
     anyenv install pyenv
     anyenv install nodenv
 
-    # shellcheck source="~/.bash_profile"
-    # shellcheck disable=SC1091
-    source ~/.bash_profile
+    source "../../.bash_profile"
 
     setup_envs
+
+    echo "$(tput setaf 2)Install anyenv complete. ✔︎$(tput sgr0)"
   fi
 }

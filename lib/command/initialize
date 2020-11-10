@@ -1,27 +1,26 @@
 #!/bin/bash -eu
 function install_font() {
   if [ ! -e "${FONT_DIR}/Cica-Regular.ttf" ]; then
-    local VIRSION="v5.0.2"
-    local FILENAME="Cica_${VIRSION}_with_emoji"
-    local FONT_URL="https://github.com/miiton/Cica/releases/download/${VIRSION}/${FILENAME}.zip"
+    local -r VIRSION="v5.0.2"
+    local -r FONTNAME="Cica_${VIRSION}_with_emoji"
+    local -r FILE_URL="https://github.com/miiton/Cica/releases/download/${VIRSION}/${FONTNAME}.zip"
     cd "${DOT_DIRECTORY}/tmp"
-    curl -fsSLo font.zip "${FONT_URL}"
-    unzip font.zip -d font
-    cp -f font/*.ttf "${FONT_DIR}"
-    rm -rf font*
+    curl -fsSLo "${FONTNAME}.zip" "${FILE_URL}"
+    unzip "${FONTNAME}.zip" -d "${FONTNAME}"
+    cp -f "${FONTNAME}/*.ttf" "${FONT_DIR}"
+    rm -rf "${FONTNAME}*"
     cd "${DOT_DIRECTORY}"
+
+    echo "$(tput setaf 2)Install font complete!. ✔︎$(tput sgr0)"
   fi
 }
 
 initialize() {
   case ${OSTYPE} in
   darwin*)
+    source "../path/mac"
     run_defaults
     run_brew
-
-    FONT_DIR="${HOME}/Library/Fonts/"
-    # shellcheck disable=SC2034 # Used in lib/formulae/vscode
-    VSCODE_PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
     ;;
   linux-gnu)
