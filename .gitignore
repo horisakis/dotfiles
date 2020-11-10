@@ -4,7 +4,6 @@
 .config/fish/completions/fisher.fish
 .config/fish/fish_variables
 .config/fish/fishd.*
-.config/fish/fisher-pkg
 .config/yarn/link
 .config/yarn/global/node_modules
 .vim/.netrwhist
