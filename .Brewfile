@@ -8,6 +8,7 @@ tap "homebrew/services"
 tap "kyoshidajp/ghkw"
 tap "sanemat/font"
 brew "anyenv"
+brew "openssl@1.1"
 brew "python@3.8"
 brew "dash", link: false
 brew "docker", link: false
