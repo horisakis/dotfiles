@@ -8,7 +8,7 @@ Run the following commnad.
 ```
 $ bash -c "$(curl -fsSL raw.github.com/horisakis/dotfiles/master/setup.sh)"
 # Overwrite dotfiles and deploy
-$ bash -c "$(curl -fsSL raw.github.com/horisakis/dotfiles/master/setup.sh)" -- -f -s deploy
+$ bash -c "$(curl -fsSL raw.github.com/horisakis/dotfiles/master/setup.sh)" -- -f deploy
 ```
 
 ## Initialize
