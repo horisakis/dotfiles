@@ -10,7 +10,7 @@ function setup_envs() {
 
   if has "pyenv"; then
     echo "Setting up pyenv..."
-    [ ! -d "$(pyenv root)"/plugins/pyenv-virtualenv ] && git clone https://github.com/yyuu/pyenv-virtualenv "$(pyenv root)"/plugins/pyenv-virtualenv
+    [ ! -d "$(pyenv root)"/plugins/pyenv-virtualenv ] && git clone -q https://github.com/yyuu/pyenv-virtualenv "$(pyenv root)"/plugins/pyenv-virtualenv
   fi
 }
 
@@ -21,7 +21,7 @@ function init_anyenv() {
     anyenv init
     yes | anyenv install --init
 
-    git clone https://github.com/znz/anyenv-update.git "$(anyenv root)"/plugins/anyenv-update
+    git clone -q https://github.com/znz/anyenv-update.git "$(anyenv root)"/plugins/anyenv-update
     anyenv update
 
     echo "Installing  envs..."
