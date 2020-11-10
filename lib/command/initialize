@@ -18,7 +18,8 @@ function install_font() {
 initialize() {
   case ${OSTYPE} in
   darwin*)
-    source "../path/mac"
+    #shellcheck source=../path/mac
+    source "lib/path/mac"
     run_defaults
     run_brew
 

@@ -29,7 +29,8 @@ function init_anyenv() {
     anyenv install pyenv
     anyenv install nodenv
 
-    source "../../.bash_profile"
+    # shellcheck source=../../../.bash_profile
+    source .bash_profile
 
     setup_envs
 
