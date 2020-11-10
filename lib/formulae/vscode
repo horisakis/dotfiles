@@ -3,7 +3,7 @@
 function setup_vscode() {
   if [ -d "${VSCODE_PATH}" ]; then
     export PATH="${PATH}:${VSCODE_PATH}"
-    xargs -L 1 code --install-extension < "${DOT_DIRECTORY}/vscode/packages.list"
+    xargs -L 1 code --install-extension <"${DOT_DIRECTORY}/vscode/packages.list"
 
     [ -d "${VSCODE_DIR}" ] && rm -rf "${VSCODE_DIR}"
     if [ ! -e "${VSCODE_DIR}" ]; then

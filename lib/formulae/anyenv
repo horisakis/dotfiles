@@ -19,7 +19,7 @@ function init_anyenv() {
     echo "Initializing anyenv..."
 
     anyenv init
-    anyenv install --init
+    yes | anyenv install --init
 
     git clone https://github.com/znz/anyenv-update.git "$(anyenv root)"/plugins/anyenv-update
     anyenv update

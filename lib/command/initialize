@@ -7,8 +7,8 @@ function install_font() {
     cd "${DOT_DIRECTORY}/tmp"
     curl -fsSLo "${FONTNAME}.zip" "${FILE_URL}"
     unzip "${FONTNAME}.zip" -d "${FONTNAME}"
-    cp -f "${FONTNAME}/*.ttf" "${FONT_DIR}"
-    rm -rf "${FONTNAME}*"
+    cp -f "${FONTNAME}/"*.ttf "${FONT_DIR}"
+    rm -rf "${FONTNAME}"*
     cd "${DOT_DIRECTORY}"
 
     echo "$(tput setaf 2)Install font complete!. ✔︎$(tput sgr0)"
