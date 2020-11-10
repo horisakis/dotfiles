@@ -43,7 +43,7 @@ if [ ! -d ${DOT_DIRECTORY} ]; then
   mkdir ${DOT_DIRECTORY}
 
   if has "git"; then
-    git clone --recursive "${REMOTE_URL}" "${DOT_DIRECTORY}"
+    git clone -q --recursive "${REMOTE_URL}" "${DOT_DIRECTORY}"
   else
     curl -fsSLo ${HOME}/dotfiles.tar.gz ${DOT_TARBALL}
     tar -zxf ${HOME}/dotfiles.tar.gz --strip-components 1 -C ${DOT_DIRECTORY}

@@ -6,7 +6,7 @@ function install_font() {
     local -r FILE_URL="https://github.com/miiton/Cica/releases/download/${VIRSION}/${FONTNAME}.zip"
     cd "${DOT_DIRECTORY}/tmp"
     curl -fsSLo "${FONTNAME}.zip" "${FILE_URL}"
-    unzip "${FONTNAME}.zip" -d "${FONTNAME}"
+    unzip -q "${FONTNAME}.zip" -d "${FONTNAME}"
     cp -f "${FONTNAME}/"*.ttf "${FONT_DIR}"
     rm -rf "${FONTNAME}"*
     cd "${DOT_DIRECTORY}"
@@ -47,7 +47,7 @@ initialize() {
   esac
 
   set +e
-  bash <(curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh) ~/.cache/dein
+  bash <(curl -s https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh) ~/.cache/dein
 
   setup_formurae
 
