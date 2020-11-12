@@ -12,6 +12,11 @@ function setup_envs() {
     echo "Setting up pyenv..."
     [ ! -d "$(pyenv root)"/plugins/pyenv-virtualenv ] && git clone -q https://github.com/yyuu/pyenv-virtualenv "$(pyenv root)"/plugins/pyenv-virtualenv
   fi
+
+  if has "nodenv"; then
+    echo "Setting up nodenv..."
+    [ ! -d "$(nodenv root)/plugins/nodenv-yarn-install" ] &&  git clone -q https://github.com/pine/nodenv-yarn-install.git "$(nodenv root)/plugins/nodenv-yarn-install"
+  fi
 }
 
 function init_anyenv() {
