@@ -8,7 +8,7 @@ OS X / Ubuntu dotfiles.
 - Macのみ
   - X Codeのインストール ※ファイルサイズが大きいので事前にインストールを行い並行して他の作業を行う。
   ```
-  open https://apps.apple.com/jp/app/xcode/id497799835?mt=12
+  open "https://apps.apple.com/jp/app/xcode/id497799835?mt=12"
   ```
   [App Store を開く] > サインイン > [入手]
   - X Code Command Line Toolsのインストール
@@ -36,7 +36,7 @@ OS X / Ubuntu dotfiles.
     ```
     ssh-add ~/.ssh/id_rsa
     ```
-  - 公開鍵のない表を表示、内容をコピーする
+  - 公開鍵の内容を表示、内容をコピーする
     ```
     cat ~/.ssh/id_rsa.pub
     ```
