@@ -59,7 +59,7 @@ cask "trailer"
 cask "vagrant"
 cask "virtualbox"
 cask "visual-studio-code"
-cask "zoomus"
+cask "zoom"
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
