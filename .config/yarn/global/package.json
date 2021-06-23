@@ -10,6 +10,7 @@
     "yo": "^4.2.0"
   },
   "resolutions": {
+    "@google/clasp/**/exec-sh": "^0.3.2",
     "sao/**/fast-glob": "^3.1.1",
     "yo/got": "^9.6.0",
     "yo/package-json/got": "^9.6.0",
